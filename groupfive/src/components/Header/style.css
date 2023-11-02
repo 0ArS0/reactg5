@@ -1,0 +1,25 @@
+header {
+    background-color: #121212;
+    border: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.486);
+}
+header a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}.menu a:hover {
+    text-decoration: underline;
+}
+
+header a+a {
+    margin-left: 25px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 125px;
+}

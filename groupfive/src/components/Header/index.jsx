@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './style.css';
-import Back from '../../assets/logo.png';
+import Logo from '../../assets/logo.png';
 
 export default function HeaderMain() {
 
@@ -11,17 +11,23 @@ export default function HeaderMain() {
         <div className="container">
           <div className="logo">
             <Link to='/'>
-              <img src={Back} style={{ width: '280px', marginLeft: '-80px', marginTop: '60px' }} />
+              <img src={Logo} style={{ width: '200px'}} />
             </Link>
           </div>
           <div className="menu">
-            <Link to="/sobre">Sobre</Link>
-            <Link to="/contato">Contato</Link>
-            <Link to="/extra">Extra</Link>
+            <Link className="menuItem" to="/sobre">Produtos</Link>
+            <Link className="menuItem" to="/contato">Contato</Link>
           </div>
         </div>
       </div>
       <div className="mheader">
+        <div className="auxMenu">
+          <Link className="auxItem" to="/camisas">Camisas </Link>
+          •
+          <Link className="auxItem" to="/decoracao">Decoração </Link>
+          •
+          <Link className="auxItem" to="/acessorios">Acessórios</Link>
+        </div>
       </div>
     </header>
   );

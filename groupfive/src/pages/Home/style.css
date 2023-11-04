@@ -14,12 +14,13 @@ main {
 }
 
 .titulo {
-    margin: 2vh;
+    margin: 2vh 0 2vh 0;
     font-size: 4vh;
 }
 
 .w100, .carrossel{
-    width: 50vh;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .carrossel{

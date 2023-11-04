@@ -1,0 +1,124 @@
+main header {
+    display: flex;
+}
+
+.cards .card h2 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
+img {
+    width: 20px;
+    margin-left: 40px;
+
+    cursor: pointer;
+}
+
+main .cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-bottom: 1rem;
+}
+
+main .cards .card {
+    margin: 0 auto;
+
+    background-color: #242424;
+
+    padding: 30px 40px;
+    width: 600px;
+
+    border-radius: 7px;
+    margin-top: 40px;
+
+}
+
+.cards .card header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.card header h2 {
+    font-weight: 700;
+
+    color: #ffb100;
+
+    font-size: 1.7rem;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+
+    max-width: 500px;
+
+    font-weight: 500;
+
+    color: #fff;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 30px;
+}
+
+.btns button {
+    color: rgba(255, 255, 255, 0.938);
+    font-size: 1.3rem;
+    border: 0;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 5px 40px;
+}
+
+.btn-edit button {
+    background-color: #0d214f;
+}
+
+.btn-delete button {
+    background-color: #e40033;
+}
+
+em {
+    margin-right: 1vh;
+    text-transform: uppercase;
+}
+
+.btn-create {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-create button {
+    background-color: #0d214f;
+    color: rgba(255, 255, 255, 0.938);
+    font-size: 1.3rem;
+    border: 0;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 5px 40px;
+}
+
+button:hover{
+    transition: ease-in-out 0.3s;
+    color: #ffb100;
+}
+

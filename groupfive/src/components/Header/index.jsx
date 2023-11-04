@@ -15,7 +15,7 @@ export default function HeaderMain() {
             </Link>
           </div>
           <div className="menu">
-            <Link className="menuItem" to="/sobre">Produtos</Link>
+            <Link className="menuItem" to="/produtos">Produtos</Link>
             <Link className="menuItem" to="/contato">Contato</Link>
           </div>
         </div>

@@ -50,7 +50,7 @@ main .cards .card {
     font-size: 1.7rem;
 }
 
-p {
+.cards > p {
     margin-top: 20px;
     font-size: 1.2rem;
 

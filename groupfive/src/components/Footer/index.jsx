@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './style.css';
 import Logo from '../../assets/logo.png';
 import Instagram from '../../assets/instagram_logo.png'
-import Email from '../../assets/email2_icon.png'
+import Email from '../../assets/email_icon.png'
 
 export default function Footer() {
 

@@ -12,20 +12,22 @@ export default function Home() {
     <>
       <Header />
       <main className='paginaPrincipal'>
+        <div className="texto">
+          <h1>Seja Bem-vindo(a)</h1>
+          <p>A nossa loja dedicada ao mundo dos produtos geeks e otakus, onde a paixão pelos animes e ficção cientifica é a nossa força motriz! 🎌</p>
+          <p>Compreendemos o amor e a devoção que os fãs de animes têm por esse universo único, assim como a paixão dos geeks por todas as formas de entretenimento nerd. Seja você um ninja em busca de roupas e acessórios inspirados em Naruto, um alquimista à procura de decorações de Fullmetal Alchemist ou um fã de qualquer outro anime, você está no lugar certo</p>
+        </div>
         <div className="Carrousel" style={{ display: "block" }}>
           <Carousel controls={false} indicators={true} indicatorLabels={["btn1", "btn2", "btn3", "btn4", "btn5", "btn6", "btn7"]} className='carrossel'>
             <Carousel.Item interval={3400}>
-              <Link>
-                <img className='d-block w100'
-                  src="src/assets/blackFriday.png"
-                  alt="Image One"
-                />
-              </Link>            
+              <img className='d-block w100'
+                src="src/assets/blackFriday.png"
+                alt="Image One" />
             </Carousel.Item>
             <Carousel.Item interval={2800}>
               <Link>
                 <img className='d-block w100'
-                  src="src/assets/pac-man.png"
+                  src="src/assets/Camisa-pac-man.png"
                   alt="Image Two"
                 />
               </Link>
@@ -33,7 +35,7 @@ export default function Home() {
             <Carousel.Item interval={2800}>
               <Link>
                 <img className='d-block w100'
-                  src="src/assets/Caneca Vicente Jóia.png"
+                  src="src/assets/Caneca-Vicente-Jóia.png"
                   alt="Image Three"
                 />
               </Link>
@@ -41,7 +43,7 @@ export default function Home() {
             <Carousel.Item interval={2800}>
               <Link>
                 <img className='d-block w100'
-                  src="src/assets/lol.png"
+                  src="src/assets/Camisa-Lol.png"
                   alt="Image Four"
                 />
               </Link>
@@ -49,7 +51,7 @@ export default function Home() {
             <Carousel.Item interval={2800}>
               <Link>
                 <img className='d-block w100'
-                  src="src/assets/lyza.png"
+                  src="src/assets/Camisa-Lyza.png"
                   alt="Image Five"
                 />
               </Link>
@@ -57,7 +59,7 @@ export default function Home() {
             <Carousel.Item interval={2800}>
               <Link>
                 <img className='d-block w100'
-                  src="src/assets/Quadro Jar-Jar Binks.png"
+                  src="src/assets/Quadro-Jar-Jar-Binks.png"
                   alt="Image Six"
                 />
               </Link>
@@ -65,7 +67,7 @@ export default function Home() {
             <Carousel.Item interval={2800}>
               <Link>
                 <img className='d-block w100'
-                  src="src/assets/Camisa Pato.png"
+                  src="src/assets/Camisa-Pato.png"
                   alt="Image Seven"
                 />
               </Link>

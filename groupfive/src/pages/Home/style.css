@@ -8,10 +8,15 @@ main {
 
 .paginaPrincipal {
     display: flex;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     color: #fff;
 }
+
+.Carrousel {
+    margin-top: 3vh;
+}
+
 
 .titulo {
     margin: 2vh 0 2vh 0;
@@ -26,4 +31,8 @@ main {
 .carrossel{
     margin-left: auto;
     margin-right: auto;
+}
+
+[aria-label] {
+    background-color: #ffb100 !important;
 }

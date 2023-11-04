@@ -9,10 +9,17 @@ a {
 }
 
 .footerItems img {
+    width: 2rem;
     height: 2rem;
 }
 
 .footerSocial {
+    margin-top: 1.5vh;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
+
+.footerSocialImg img{
+    margin-left: 30px;
+}   

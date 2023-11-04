@@ -13,16 +13,16 @@ export default function Footer() {
         <div className="container">
           <div className="logo">
             <Link to='/produtosAdmin'>
-              <img src={Logo} style={{ width: '100px' }} />
+              <img src={Logo} style={{ width: '18vh', marginTop: '1.5vh'}} />
             </Link>
           </div>
           <p>Group Five &copy; - Todos os direitos reservados.</p>
           <div className="footerItems">
-            <p className="footerItem">Entre em contato conosco:</p>
             <div className="footerSocial">
-
-            <a href="mailto:groups2five@gmail.com? subject=teste" target="blank"><img src={Email} alt="" /></a> {/*TODO: corrigir dimensionamento das imagens do footer*/}
-            <a href="https://www.instagram.com/groups2five/" target="blank"><img src={Instagram} alt="" /></a>
+              <div className="footerSocialImg">
+                <a href="mailto:groups2five@gmail.com? subject=teste" target="blank"><img src={Email} /></a>
+                <a href="https://www.instagram.com/groups2five/" target="blank"><img src={Instagram} /></a>
+              </div>
             </div>
           </div>
         </div>

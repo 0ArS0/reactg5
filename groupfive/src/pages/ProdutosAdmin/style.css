@@ -1,5 +1,5 @@
-main header {
-    display: flex;
+main {
+    height: 80vh;
 }
 
 .cards .card h2 {
@@ -8,10 +8,9 @@ main header {
     max-width: 500px;
 }
 
-img {
+.cards img {
     width: 20px;
     margin-left: 40px;
-
     cursor: pointer;
 }
 

@@ -35,7 +35,6 @@ const validationPost = yup.object().shape({
   funcionarioResponseDTO: yup.object().shape({
     nome: yup.string().required("Insira o nome do funcionário cadastrante").max(20, "Até 20 caracteres")
   })
-
 })
 
 export default function Posts() {
@@ -141,7 +140,6 @@ export default function Posts() {
               </select>
               <p className="error-message">{errors.categoriaDTO?.message}</p>
             </div>
-
             <div className="fields">
               <label htmlFor="funcionarioResponseDTO.nome">Nome do funcionário: </label>
               <select
@@ -155,7 +153,6 @@ export default function Posts() {
               </select>
               <p className="error-message">{errors.funcionarioResponseDTO?.message}</p>
             </div>
-
             <div className="btn-post">
               <button>Enviar</button>
             </div>

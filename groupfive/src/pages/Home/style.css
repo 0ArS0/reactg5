@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Orbitron&family=VT323&display=swap');
+
+main {
+    /* font-family: 'Lora', serif; */
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'VT323', monospace; */
+}
+
 .paginaPrincipal {
     display: flex;
     height: 100vh;
-    align-items: center;
     justify-content: center;
-    color: wheat;
+    color: #fff;
+}
+
+.titulo {
+    margin: 2vh 0 2vh 0;
+    font-size: 4vh;
+}
+
+.w100, .carrossel{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.carrossel{
+    margin-left: auto;
+    margin-right: auto;
 }

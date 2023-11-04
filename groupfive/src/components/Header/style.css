@@ -1,14 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Orbitron&family=VT323&display=swap');
+
+.menu{
+    font-size: 2rem;
+}
+
+.menu:hover{
+    text-decoration: none;
+}
+
 header {
+    font-family: 'VT323', monospace;
     background-color: #121212;
     border: 0;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.486);
+    
 }
+
+.theader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 14vh;
+    background-color: #121212;
+    border-bottom: #ffb100 2px inset;
+    z-index: 5;
+}
+
+.mheader{
+    margin-top: 14vh;
+    width: 100%;
+}
+
 header a {
-    font-size: 20px;
     text-decoration: none;
     color: #fff;
-}.menu a:hover {
-    text-decoration: underline;
+}
+
+.menuItem:hover {
+    transition: ease-in-out 0.3s;
+    color: #ffb100;
 }
 
 header a+a {
@@ -19,7 +49,25 @@ header a+a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
-    height: 125px;
+    height: 16vh;
+}
+
+.mheader {
+    background-color: #242424;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.auxItem:hover{
+    transition: ease-in-out 0.3s;
+    color: #ffb100;
+}
+
+.auxMenu{
+    color: #fff;
 }

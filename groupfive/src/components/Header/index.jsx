@@ -11,7 +11,7 @@ export default function HeaderMain() {
         <div className="container">
           <div className="logo">
             <Link to='/'>
-              <img src={Logo} style={{ width: '200px'}} />
+              <img src={Logo} style={{ width: '22vh'}} />
             </Link>
           </div>
           <div className="menu">

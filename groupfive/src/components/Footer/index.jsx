@@ -17,9 +17,11 @@ export default function Footer() {
                     <p>Group Five &copy; - Todos os direitos reservados.</p>
                     <div className="footerItems">
                         <p className="footerItem">Entre em contato conosco:</p>
-                        <a href="mailto:groups2five@gmail.com? subject=teste" target="blank">groups2five@gmail.com</a>
-                        <a href="mailto:groups2five@gmail.com? subject=teste" target="blank"><img src="" alt="" /> email</a>
-                        <a href="www.instagram.com/teste" target="blank"><img src="" alt="" /> insta</a>
+                        <div className="footerSocial">
+
+                        <a href="mailto:groups2five@gmail.com? subject=teste" target="blank"><img src="src/assets/email2_icon.png" alt="" /></a>
+                        <a href="https://www.instagram.com/groups2five/" target="blank"><img src="src/assets/instagram_logo.png" alt="" /></a>
+                        </div>
                     </div>
                 </div>
             </div>

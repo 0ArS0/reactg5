@@ -10,7 +10,10 @@ export default function Acessorios() {
             <main className="acessorios">
                 <div class="container-categorias">
                     <div className="categoria">
-                        <h3>Acessórios</h3> <hr />
+                        <div className="titulo">
+                            <h3>Acessórios</h3> <hr />
+                        </div>
+                        <div className="produtos-categoria">
                         <div class="produto">
                             <img src="../src/assets/Controle-Dragon-Ball.png" alt="Acessorios 1" />
                             <p>Controle Dragon Ball</p>
@@ -25,6 +28,7 @@ export default function Acessorios() {
                             <img src="../src/assets/Controle-Naruto2.png" alt="Acessorios 3" />
                             <p>Controle Naruto</p>
                             <p>Preço: $99.99</p>
+                        </div>
                         </div>
                     </div>
                 </div>

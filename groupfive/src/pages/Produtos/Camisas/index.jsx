@@ -11,7 +11,10 @@ export default function Camisas() {
             <main className="camisas">
                 <div class="container-categorias">
                     <div className="categoria">
+                        <div className="titulo">
                         <h3>Camisas</h3> <hr />
+                        </div>
+                        <div className="produtos-categoria">
                         <div class="produto">
                             <img src="../src/assets/Camisa-Pato.png" alt="Camisa 1" />
                             <p>Camisa Preta Pato</p>
@@ -46,6 +49,7 @@ export default function Camisas() {
                             <img src="../src/assets/Camisa-xbox.png" alt="Camisa 7" />
                             <p>Camisa Preta Xbox</p>
                             <p>Preço: $24.99</p>
+                        </div>
                         </div>
                     </div>
                 </div>

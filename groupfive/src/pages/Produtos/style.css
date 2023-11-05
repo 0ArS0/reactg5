@@ -1,8 +1,3 @@
-.produtos {
-    height: 1050vh;
-    background-color: #121212;
-}
-
 .hotProds {
     margin-top: 4vh;
     display: flex;
@@ -22,7 +17,6 @@
 
 .container-categorias h3{ 
     display: flex;
-    flex-direction: column;
     align-items: center;
     color: #ffb100;
 }
@@ -30,18 +24,25 @@
 .categoria {
     margin-top: 8vh;
     padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.produtos-categoria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 .produto {
-    border: 0.2vh solid #ddd;
-    background-color: #fff;
+    border: 0.2vh 0 0.2vh 0 solid #ddd;
+    width: 40%;
     text-align: center;
-    padding: 1vh;
 }
 
 .produto img {
     border: 1vh solid #01142e;
     margin-bottom: 2vh;
-    max-width: 40%;
+    max-width: 70%;
     height: auto;
 }

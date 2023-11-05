@@ -11,7 +11,10 @@ export default function Decoracao() {
             <main className="decoracao">
                 <div className="container-categorias">
                     <div className="categoria">
+                        <div className="titulo">
                         <h3>Decoração</h3> <hr />
+                        </div>
+                            <div className="produtos-categoria">
                         <div className="produto">
                             <img src="../src/assets/Quadro-Jar-Jar-Binks.png" alt="Decoração 1" />
                             <p>Quadro Jar-Jar Binks</p>
@@ -46,6 +49,7 @@ export default function Decoracao() {
                             <img src="../src/assets/Quadros-star-wars.png" alt="Decoração 7" />
                             <p>Quadros star-wars</p>
                             <p>Preço: $199.99</p>
+                        </div>
                         </div>
                     </div>
                 </div>

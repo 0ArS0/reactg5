@@ -9,6 +9,7 @@ import Produtos from '../pages/Produtos';
 import Camisas from '../pages/Produtos/Camisas';
 import Decoracao from '../pages/Produtos/decoracao';
 import Acessorios from '../pages/Produtos/acessorios';
+import Item from '../pages/Item';
 
 export default function AppRouter() {
   return (
@@ -19,7 +20,8 @@ export default function AppRouter() {
         <Route path='/produtos/decoracao' element={<Decoracao />} ></Route>
         <Route path='/produtos/acessorios' element={<Acessorios />} ></Route>
         <Route path='/produtosAdmin' element={<ProdutosAdmin/>}></Route>
-        <Route path="/update/:id" element={<Update />} />
+        <Route path="/update/:id" element={<Update />}></Route>
+        <Route path='/produtos/item/:id'element={<Item />}></Route>
         <Route path='/posts' element={<Posts/>}></Route>
         <Route path='*' element={<Erro />} ></Route>
     </Routes>

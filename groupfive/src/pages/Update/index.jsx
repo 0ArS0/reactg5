@@ -56,19 +56,24 @@ export default function Update() {
   useEffect(() => {
     axios.get("http://localhost:8080/api/categoria/listar")
       .then(response => {
+        reset(response.data)
         setCategorias(response.data)
+      }).catch(() => {
+        console.log("categoria nao encontrada")
       })
   }, [])
 
-  const addPut = (data) => axios.put(`http://localhost:8080/api/produto/atualizar/${id}`, data)
-    .then(() => {
-      console.log("deu certo")
-      navigate("/produtosAdmin/")
-    }).catch(() => {
-      console.log("deu errado")
-    })
+  const addPut = (data) =>
+    axios
+      .put(`http://localhost:8080/api/produto/atualizar/${id}`, data)
+      .then(() => {
+        console.log("deu certo")
+        navigate("/produtosAdmin/")
+      }).catch(() => {
+        console.log("deu errado")
+      })
 
-    (/*TODO: remover obrigatoriedade em todos os parâmetros */)
+      (/*TODO: remover obrigatoriedade em todos os parâmetros */)
   return (
     <div>
       <Header />
@@ -151,7 +156,7 @@ export default function Update() {
               </select>
               <p className="error-message">{errors.funcionarioResponseDTO?.message}</p>
             </div>
-            
+
             <div className="btn-post">
               <button>Enviar</button>
             </div>

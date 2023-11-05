@@ -1,3 +1,7 @@
+body{
+    color: #fff;
+}
+
 .hotProds {
     margin-top: 4vh;
     display: flex;

@@ -9,6 +9,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const validationPost = yup.object().shape({
+
   nome: yup
     .string()
     .required("Preencha o nome do produto")
@@ -35,6 +36,7 @@ const validationPost = yup.object().shape({
   funcionarioResponseDTO: yup.object().shape({
     nome: yup.string().required("Insira o nome do funcionário cadastrante").max(20, "Até 20 caracteres")
   })
+  
 })
 
 export default function Posts() {
@@ -74,13 +76,14 @@ export default function Posts() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="cadastro-produtos">
         <h2>CADASTRO DE PRODUTOS</h2>
         <div className="card-body-post">
           <form action="#" onSubmit={handleSubmit(addPost)}>
             <div className="fields">
               <label htmlFor="nome">Nome: </label>
               <input
+                placeholder="Nome do produto"
                 type="text"
                 id="nome"
                 name="nome"
@@ -88,10 +91,10 @@ export default function Posts() {
               />
               <p className="error-message">{errors.titulo?.message}</p>
             </div>
-
             <div className="fields">
               <label htmlFor="descricao">Descrição: </label>
-              <input
+              <input 
+                placeholder="Descrição sobre o produto"
                 type="text"
                 id="descricao"
                 name="descricao"
@@ -99,34 +102,39 @@ export default function Posts() {
               />
               <p className="error-message">{errors.descricao?.message}</p>
             </div>
-
             <div className="fields">
               <label htmlFor="qtdEstoque">Quantidade em estoque: </label>
-              <input type=""
+              <input 
+                type="number"
+                placeholder='0'
                 name="qtdEstoque"
                 id="qtdEstoque"
                 {...register("qtdEstoque")} />
               <p className="error-message">{errors.qtdEstoque?.message}</p>
             </div>
-
             <div className="fields">
               <label htmlFor="valorUnit">Valor unitário: </label>
-              <input type="number"
+              <input 
+                type="number" 
+                placeholder="9.99" 
+                min="9.99" 
+                step="0.01"
                 name="valorUnit"
                 id="valorUnit"
                 {...register("valorUnit")} />
               <p className="error-message">{errors.valorUnit?.message}</p>
             </div>
-
             <div className="fields">
               <label htmlFor="dataFab">Data de fabricação: </label>
-              <input type="date"
+              <input 
+                type="date"
                 name="dataFab"
                 id="dataFab"
+                max="2023-11-05"
+                min="1950-01-01"
                 {...register("dataFab")} />
               <p className="error-message">{errors.dataFab?.message}</p>
             </div>
-
             <div className="fields">
               <label htmlFor="categoriaDTO.nome">Categoria: </label>
               <select

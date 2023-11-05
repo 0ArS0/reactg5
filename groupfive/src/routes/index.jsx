@@ -19,9 +19,8 @@ export default function AppRouter() {
         <Route path='/produtos/decoracao' element={<Decoracao />} ></Route>
         <Route path='/produtos/acessorios' element={<Acessorios />} ></Route>
         <Route path='/produtosAdmin' element={<ProdutosAdmin/>}></Route>
-        <Route path='/update/:id' element={<Update/>}></Route>
+        <Route path="/update/:id" element={<Update />} />
         <Route path='/posts' element={<Posts/>}></Route>
-        <Route path='/update/:id' element={<Update/>}></Route>
         <Route path='*' element={<Erro />} ></Route>
     </Routes>
   )

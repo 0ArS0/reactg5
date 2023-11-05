@@ -13,7 +13,7 @@ export default function ProdutosAdmin() {
     axios.get("http://localhost:8080/api/produto/listar/")
       .then(response => {
         setProdutos(response.data)
-        console.log(response.data)  
+        console.log(response.data)
       }).catch(() => {
         console.log("deu errado")
       })
@@ -38,14 +38,15 @@ export default function ProdutosAdmin() {
             return (
               <div className="card" key={key}>
                 <header>
-                  <h2><em>{produto.nome}</em> - {produto.descricao}</h2>
+                  <h2>{produto.nome}</h2>
                 </header>
-                <div className="line"></div>
-                <p>ID: {produto.id}</p>
-                <p>Categoria: {produto.categoriaDTO.nome}</p>
-                <p>Valor: R${produto.valorUnit.toFixed(2)}</p>
-                <p>Quantidade em estoque: {produto.qtdEstoque}</p>
-                <img src={`src/assets/lyza.png`} alt={produto.categoriaDTO.nome} width="50px"/> {/*TODO: corrigir essa imagem */}
+                <div className="line">
+                  <p>ID: {produto.id}</p>
+                  <p>Categoria: {produto.categoriaDTO.nome}</p>
+                  <p>Valor: R${produto.valorUnit.toFixed(2)}</p>
+                  <p>Quantidade em estoque: {produto.qtdEstoque}</p>
+                </div>
+                <img src={`../src/assets/${produto.descricao}`} alt={produto.categoriaDTO.nome} width="50px" /> {/*TODO: corrigir essa imagem */}
                 <div className="btns">
                   <div className="btn-edit">
                     <Link to={`/update/${produto.id}`}>

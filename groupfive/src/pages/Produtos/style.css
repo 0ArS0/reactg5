@@ -29,15 +29,22 @@
     align-items: center;
 }
 
+.titulo {
+    text-align: center;
+    width: 80%;
+}
+
 .produtos-categoria{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 .produto {
     border: 0.2vh 0 0.2vh 0 solid #ddd;
     width: 40%;
     text-align: center;
+    margin-top: 3vh;
 }
 
 .produto img {

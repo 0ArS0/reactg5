@@ -1,4 +1,5 @@
-.footer {
+footer {
+    background-color: #242424;
     border-top: #ffb100 0.5px inset;
     color: #fff;
 }

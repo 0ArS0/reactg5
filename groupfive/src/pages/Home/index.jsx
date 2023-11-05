@@ -51,7 +51,7 @@ export default function Home() {
             <Carousel.Item interval={2800}>
               <Link>
                 <img className='d-block w100'
-                  src="src/assets/Camisa-Lyza.png"
+                  src="src/assets/Camisa-Lyza-mortica.png"
                   alt="Image Five"
                 />
               </Link>

@@ -19,7 +19,7 @@ export default function Produtos() {
                             <Carousel.Item interval={3400}>
                                 <Link>
                                     <img className='d-block w100'
-                                        src="src/assets/Camisa-Lyza.png"
+                                        src="src/assets/Camisa-Lyza-mortica.png"
                                         alt="Image One" />
                                 </Link>
                             </Carousel.Item>
@@ -65,7 +65,7 @@ export default function Produtos() {
                             <p>Preço: $19.99</p>
                         </div>
                         <div className="produto">
-                            <img src="src/assets/Camisa-Lyza.png" alt="Camisa 2" />
+                            <img src="src/assets/Camisa-Lyza-mortica.png" alt="Camisa 2" />
                             <p>Camisa Preta Lyza</p>
                             <p>Preço: $49.99</p>
                         </div>

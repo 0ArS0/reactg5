@@ -78,14 +78,15 @@ export default function Produtos() {
           <h2>Categorias</h2>
           <p>Não teve interesse nos nossos destaques? Sem problemas, explores através das nossas categorias</p>
           {categorias.map((categoria, key) => {
-            const produtosFiltrados = produtos.filter((produto) => produto.categoria === categoria.id);
+            const produtosFiltrados = produtos.filter((produto) => produto.categoriaDTO.nome == categoria.nome);
             return (
               <div className="categoria" key={key}>
                 <div className="titulo">
                   <h3>{categoria.nome}</h3> <hr />
                 </div>
+
                 <div className="produtos-categoria">
-                  {produtosFiltrados.map((produto, key) => { //TODO: separar corretamente as categorias
+                  {produtosFiltrados.map((produto, key) => {
                     return (
                       <div className="produto" key={key}>
                         <Link to={`item/${produto.id}`}>
@@ -93,13 +94,13 @@ export default function Produtos() {
                         </Link>
                         <p>{produto.nome}</p>
                         <p>Preço: R${produto.valorUnit.toFixed(2)}</p>
-                        <p>teste: {produto.categoria}</p>
                       </div>
-                    )
+                    );
                   })}
                 </div>
+
               </div>
-            )
+            );
           })}
         </div>
       </main>

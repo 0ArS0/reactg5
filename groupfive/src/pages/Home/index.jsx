@@ -5,6 +5,7 @@ import Header from '../../components/Header'
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../../components/Footer';
+import Contador from '../../components/Contador';
 
 export default function Home() {
 
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Header />
       <main className='paginaPrincipal'>
+        <Contador/>
         <div className="texto">
           <h1>Seja Bem-Vindo(a)</h1> <hr />
           <p>A nossa loja dedicada ao mundo dos produtos geeks e otakus, onde a paixão pelos animes e ficção cientifica é a nossa força motriz! 🎌</p>
@@ -19,11 +21,6 @@ export default function Home() {
         </div>
         <div className="Carrousel" style={{ display: "block" }}>
           <Carousel controls={false} indicators={true} indicatorLabels={["btn1", "btn2", "btn3", "btn4", "btn5", "btn6", "btn7"]} className='carrossel'>
-            <Carousel.Item interval={3400}>
-              <img className='d-block w100'
-                src="src/assets/blackFriday.png"
-                alt="Image One" />
-            </Carousel.Item>
             <Carousel.Item interval={2800}>
               <img className='d-block w100'
                 src="src/assets/Camisa-pac-man.png"

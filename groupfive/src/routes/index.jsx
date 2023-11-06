@@ -12,11 +12,13 @@ import Acessorios from '../pages/Produtos/acessorios';
 import Item from '../pages/Item';
 import Quiz from '../pages/Quiz';
 import Tradutor from '../pages/Tradutor';
+import Contador from '../components/Contador';
 
 export default function AppRouter() {
   return (
     <Routes>
         <Route path='/' element={<Home />} ></Route>
+        <Route path='/contador' element={<Contador />} ></Route>
         <Route path='/produtos' element={<Produtos />} ></Route>
         <Route path='/produtos/camisas' element={<Camisas />} ></Route>
         <Route path='/produtos/decoracao' element={<Decoracao />} ></Route>

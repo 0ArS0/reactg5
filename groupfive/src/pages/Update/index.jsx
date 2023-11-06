@@ -56,26 +56,31 @@ export default function Update() {
   useEffect(() => {
     axios.get("http://localhost:8080/api/categoria/listar")
       .then(response => {
+        reset(response.data)
         setCategorias(response.data)
+      }).catch(() => {
+        console.log("categoria nao encontrada")
       })
   }, [])
 
-  const addPost = (data) => axios.post("http://localhost:8080/api/produto/salvar", data)
-    .then(() => {
-      console.log("deu certo")
-      navigate("/produtosAdmin/")
-    }).catch(() => {
-      console.log("deu errado")
-    })
+  const addPut = (data) =>
+    axios
+      .put(`http://localhost:8080/api/produto/atualizar/${id}`, data)
+      .then(() => {
+        console.log("deu certo")
+        navigate("/produtosAdmin/")
+      }).catch(() => {
+        console.log("deu errado")
+      })
 
-    (/*TODO: remover obrigatoriedade em todos os parâmetros */)
+      (/*TODO: remover obrigatoriedade em todos os parâmetros */)
   return (
     <div>
       <Header />
       <main>
-        <h2>CADASTRO DE PRODUTOS</h2>
+        <h2>UPDATE DE PRODUTOS</h2>
         <div className="card-body-post">
-          <form action="#" onSubmit={handleSubmit(addPost)}>
+          <form action="#" onSubmit={handleSubmit(addPut)}>
             <div className="fields">
               <label htmlFor="nome">Nome: </label>
               <input
@@ -86,7 +91,6 @@ export default function Update() {
               />
               <p className="error-message">{errors.titulo?.message}</p>
             </div>
-
             <div className="fields">
               <label htmlFor="descricao">Descrição: </label>
               <input
@@ -100,7 +104,7 @@ export default function Update() {
 
             <div className="fields">
               <label htmlFor="qtdEstoque">Quantidade em estoque: </label>
-              <input type=""
+              <input type="number"
                 name="qtdEstoque"
                 id="qtdEstoque"
                 {...register("qtdEstoque")} />
@@ -109,7 +113,7 @@ export default function Update() {
 
             <div className="fields">
               <label htmlFor="valorUnit">Valor unitário: </label>
-              <input type="number"
+              <input type="number" min="0" step="1"
                 name="valorUnit"
                 id="valorUnit"
                 {...register("valorUnit")} />

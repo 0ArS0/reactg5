@@ -1,71 +1,46 @@
-main header {
-    display: flex;
-}
-
-.cards .card h2 {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 500px;
-}
-
-img {
-    width: 20px;
-    margin-left: 40px;
-
-    cursor: pointer;
-}
-
 main .cards {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
     margin-bottom: 1rem;
 }
 
 main .cards .card {
-    margin: 0 auto;
+    padding: 2rem 2rem;
+    width: 80vh;
+    border-radius: .8rem;
+    margin-top: 4vh;
+}
 
-    background-color: #242424;
-
-    padding: 30px 40px;
-    width: 600px;
-
-    border-radius: 7px;
-    margin-top: 40px;
-
+.cards img {
+    border-radius: 30px;
+    width: 100%;
+    cursor: pointer;
 }
 
 .cards .card header {
     display: flex;
-    justify-content: space-between;
-
-    margin-bottom: 15px;
+    border: 1px solid #ffb100;
+    border-radius: .8rem;
+    justify-content: center;
+    padding: .3rem;
 }
 
 .card header h2 {
-    font-weight: 700;
-
     color: #ffb100;
-
+    margin-top: 0.2rem;
     font-size: 1.7rem;
 }
 
-p {
-    margin-top: 20px;
-    font-size: 1.2rem;
-
-    max-width: 500px;
-
-    font-weight: 500;
-
-    color: #fff;
+.card .line {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .btns {
     display: flex;
     justify-content: space-between;
-
     margin-top: 30px;
 }
 
@@ -73,28 +48,21 @@ p {
     color: rgba(255, 255, 255, 0.938);
     font-size: 1.3rem;
     border: 0;
-
     border-radius: 10px;
-
-    font-weight: 700;
-
     cursor: pointer;
-
     padding: 5px 40px;
 }
 
 .btn-edit button {
-    background-color: #0d214f;
+    border: 2px solid #ffb100;
+    background-color: #121212;
 }
 
 .btn-delete button {
-    background-color: #e40033;
+    border: 2px solid #ffb100;
+    background-color: #121212;
 }
 
-em {
-    margin-right: 1vh;
-    text-transform: uppercase;
-}
 
 .btn-create {
     margin-top: 4vh;
@@ -110,8 +78,6 @@ em {
 
     border-radius: 10px;
 
-    font-weight: 700;
-
     cursor: pointer;
 
     padding: 5px 40px;
@@ -122,3 +88,7 @@ button:hover{
     color: #ffb100;
 }
 
+.card{
+    background-color: #242424;
+    color: #fff;
+}

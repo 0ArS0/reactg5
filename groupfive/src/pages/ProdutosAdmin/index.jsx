@@ -38,14 +38,15 @@ export default function ProdutosAdmin() {
             return (
               <div className="card" key={key}>
                 <header>
-                  <h2><em>{produto.nome}</em> - {produto.descricao}</h2>
+                  <h2>{produto.nome}</h2>
                 </header>
-                <div className="line"></div>
-                <p>ID: {produto.id}</p>
-                <p>Categoria: {produto.categoriaDTO.nome}</p>
-                <p>Valor: R${produto.valorUnit.toFixed(2)}</p>
-                <p>Quantidade em estoque: {produto.qtdEstoque}</p>
-                <img src={`../../lyza.png`} alt={produto.categoriaDTO.nome} width="50px"/> {/*TODO: corrigir essa imagem */}
+                <div className="line">
+                  <p>ID: {produto.id}</p>
+                  <p>Categoria: {produto.categoriaDTO.nome}</p>
+                  <p>Valor: R${produto.valorUnit.toFixed(2)}</p>
+                  <p>Quantidade em estoque: {produto.qtdEstoque}</p>
+                </div>
+                <img src={`../src/assets/${produto.descricao}`} alt={produto.categoriaDTO.nome} width="50px" /> {/*TODO: corrigir essa imagem */}
                 <div className="btns">
                   <div className="btn-edit">
                     <Link to={`/update/${produto.id}`}>

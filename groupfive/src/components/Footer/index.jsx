@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './style.css';
 import Logo from '../../assets/logo.png';
 import Instagram from '../../assets/instagram_logo.png'
-import Email from '../../assets/email2_icon.png'
+import Email from '../../assets/email_icon.png'
 
 export default function Footer() {
 
@@ -12,17 +12,15 @@ export default function Footer() {
       <div className="footer">
         <div className="container">
           <div className="logo">
-            <Link to='/produtosAdmin'>
-              <img src={Logo} style={{ width: '100px' }} />
-            </Link>
+            <img src={Logo} style={{ width: '18vh', marginTop: '1.5vh' }} />
           </div>
-          <p>Group Five &copy; - Todos os direitos reservados.</p>
+          <p>Group Five <Link to='/produtosAdmin'>&copy;</Link> - Nem todos os direitos reservados.</p>
           <div className="footerItems">
-            <p className="footerItem">Entre em contato conosco:</p>
             <div className="footerSocial">
-
-            <a href="mailto:groups2five@gmail.com? subject=teste" target="blank"><img src={Email} alt="" /></a> {/*TODO: corrigir dimensionamento das imagens do footer*/}
-            <a href="https://www.instagram.com/groups2five/" target="blank"><img src={Instagram} alt="" /></a>
+              <div className="footerSocialImg">
+                <a href="mailto:groups2five@gmail.com? subject=teste" target="blank"><img src={Email} /></a>
+                <a href="https://www.instagram.com/groups2five/" target="blank"><img src={Instagram} /></a>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,17 @@
+.contato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin: 6vh;
+}
+
+.contato h2 {
+    font-size: 2.5rem;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}

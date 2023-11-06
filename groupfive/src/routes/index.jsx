@@ -10,6 +10,7 @@ import Camisas from '../pages/Produtos/Camisas';
 import Decoracao from '../pages/Produtos/decoracao';
 import Acessorios from '../pages/Produtos/acessorios';
 import Item from '../pages/Item';
+import Quiz from '../pages/Quiz';
 
 export default function AppRouter() {
   return (
@@ -23,6 +24,7 @@ export default function AppRouter() {
         <Route path="/update/:id" element={<Update />}></Route>
         <Route path='/produtos/item/:id'element={<Item />}></Route>
         <Route path='/posts' element={<Posts/>}></Route>
+        <Route path='/quiz' element={<Quiz />} ></Route>
         <Route path='*' element={<Erro />} ></Route>
     </Routes>
   )

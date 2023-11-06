@@ -1,11 +1,13 @@
 .pagina-tradutor {
     display: flex;
     flex-direction: column;
-    justify-content: center;   
+    justify-content: center;
     align-items: center;
+    background-color: #3232;
 }
 
 .caixaB {
+    width: 130vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,10 +43,11 @@
 .caixaA {
     margin-top: 2vh;
     display: flex;
-    justify-content: center;   
+    justify-content: center;
 }
 
-.tradutor button{
+.tradutor button {
+    cursor: pointer;
     border: 2px solid #ffb100;
     border-radius: 15px;
     padding: 1vh;
@@ -53,22 +56,26 @@
     transition: ease-in-out .5s;
 }
 
+
 .tradutor button:hover {
     transition: ease-in-out .5s;
-    color: #fff;
+    color: #ffb100;
+    box-shadow: 0px 0px 6px #ffb100;
     background-color: #323232;
 }
 
-.tradutor .botao-enviar button{
+.tradutor .botao-enviar button {
     height: 50px;
     width: 150px;
 }
 
-.tradutor .botoes-api button{
+.tradutor .botoes-api button {
     height: 50px;
     width: 150px;
 }
 
-.tradutor button:active{
-    background-color: #ffb100;
+.tradutor button:active {
+    transition: .005s;
+    transform: scale(0.97);
+    background-color: #ffffff77;
 }

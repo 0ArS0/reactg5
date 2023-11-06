@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <main className='paginaPrincipal'>
         <div className="texto">
-          <h1>Seja Bem-vindo(a)</h1>
+          <h1>Seja Bem-Vindo(a)</h1> <hr />
           <p>A nossa loja dedicada ao mundo dos produtos geeks e otakus, onde a paixão pelos animes e ficção cientifica é a nossa força motriz! 🎌</p>
           <p>Compreendemos o amor e a devoção que os fãs de animes têm por esse universo único, assim como a paixão dos geeks por todas as formas de entretenimento nerd. Seja você um ninja em busca de roupas e acessórios inspirados em Naruto, um alquimista à procura de decorações de Fullmetal Alchemist ou um fã de qualquer outro anime, você está no lugar certo</p>
         </div>

@@ -47,7 +47,7 @@ export default function Camisas() {
                 {produtosFiltrados.map((produto, key) => {
                   return (
                     <div className="produto" key={key}>
-                      <Link to={`item/${produto.id}`}>
+                      <Link to={`/produtos/item/${produto.id}`}>
                         <img src={`../src/assets/${produto.descricao}`} alt={`${produto.descricao}`} />
                       </Link>
                       <p>{produto.nome}</p>

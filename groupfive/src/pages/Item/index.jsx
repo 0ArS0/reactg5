@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import HeaderMain from '../../components/Header'
 import Footer from '../../components/Footer'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
+import './style.css'
 
 export default function Item() {
   const [produto, setProduto] = useState(null)
@@ -21,17 +22,33 @@ export default function Item() {
     return (
       <>
         <HeaderMain />
-        <div>
+        <main>
           {produtoFiltrado.map((produto, key) => {
             return (
-              <div className="produto" key={key}>
-                <img src={`../../src/assets/${produto.descricao}`} alt={`${produto.descricao}`} />
-                <p>{produto.nome}</p>
-                <p>Preço: R${produto.valorUnit.toFixed(2)}</p>
+              <div className="produto-item" key={key}>
+                <div className='pagina-item'>
+                  <div className="img-item">
+                    <img src={`../../src/assets/${produto.descricao}`} alt={`${produto.descricao}`} />
+                  </div>
+                  <div className="caixa-info-item">
+                    <div className="info-item">
+                      <div className="titulo-item">
+                        <h2>{produto.nome}</h2>
+                        <hr />
+                      </div>
+                      <p>Preço: R${produto.valorUnit.toFixed(2)}</p>
+                      <p>Quantidade no estoque: {produto.qtdEstoque}</p>
+                      <p>Funcionário responsavel: {produto.funcionarioResponseDTO.nomeUsuario}</p>
+                      <div className="compra">
+                        <Link to="/"><button>Comprar</button></Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )
           })}
-        </div>
+        </main>
         <Footer />
       </>
     )

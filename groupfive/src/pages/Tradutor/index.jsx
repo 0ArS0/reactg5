@@ -9,6 +9,7 @@ export default function Tradutor() {
     const [selectedApi, setSelectedApi] = useState(null);
     const [translationResult, setTranslationResult] = useState('');
 
+
     const translationApis = [
         { name: 'Yoda', endpoint: 'yoda' },
         { name: 'Sith', endpoint: 'sith' },
@@ -57,21 +58,21 @@ export default function Tradutor() {
                         <textarea
                             type="text"
                             id="inputText"
-                            placeholder='Digite um texto'
+                            placeholder='Digite um texto em inglês'
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                         />
                         <div className='caixaA'>
                             <div className='botoes-api'>
                                 {translationApis.map((api, index) => (
-                                    <button key={index} onClick={() => setSelectedApi(index)}>
+                                    <button className="button" key={index} onClick={() => setSelectedApi(index)}>
                                         {api.name}
                                     </button>
                                 ))}
                             </div>
                         </div>
                         <div className="botao-enviar">
-                            <button onClick={translateText}>Traduzir</button>
+                            <button className="button" onClick={translateText}>Traduzir</button>
                             {translationResult && (
                                 <div>
                                     <p>Resultado da Tradução:</p>

@@ -82,7 +82,7 @@ export default function Produtos() {
             return (
               <div className="categoria" key={key}>
                 <div className="titulo">
-                  <h3>{categoria.nome}</h3> <hr />
+                  <h3 id={categoria.nome}>{categoria.nome}</h3> <hr />
                 </div>
 
                 <div className="produtos-categoria">
@@ -98,7 +98,7 @@ export default function Produtos() {
                     );
                   })}
                 </div>
-
+                <div id={categoria.nome}></div>
               </div>
             );
           })}

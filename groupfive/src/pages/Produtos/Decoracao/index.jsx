@@ -1,60 +1,67 @@
-import React from 'react'
-import '/src/pages/Produtos/style.css'
-import HeaderMain from '../../../components/Header'
-import Footer from '../../../components/Footer'
-import './style.css'
+import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
+import Header from '../../../components/Header'
+import 'bootstrap/dist/css/bootstrap.css';
+import Footer from '../../../components/Footer';
+import '../../Produtos/style.css'
+import axios from 'axios';
 
 export default function Decoracao() {
-    return (
-        <>
-            <HeaderMain />
-            <main className="decoracao">
-                <div className="container-categorias">
-                    <div className="categoria">
-                        <div className="titulo">
-                        <h3>Decoração</h3> <hr />
-                        </div>
-                            <div className="produtos-categoria">
-                        <div className="produto">
-                            <img src="../src/assets/Quadro-Jar-Jar-Binks.png" alt="Decoração 1" />
-                            <p>Quadro Jar-Jar Binks</p>
-                            <p>Preço: $69.99</p>
-                        </div>
-                        <div className="produto">
-                            <img src="../src/assets/Quadro-irmao-do-jorel.png" alt="Decoração 2" />
-                            <p>Quadro Irmao Do Jorel</p>
-                            <p>Preço: $59.99</p>
-                        </div>
-                        <div className="produto">
-                            <img src="../src/assets/Quadro-mario.png" alt="Decoração 3" />
-                            <p>Quadro Mario</p>
-                            <p>Preço: $44.99</p>
-                        </div>
-                        <div className="produto">
-                            <img src="../src/assets/Quadro-rick.png" alt="Decoração 4" />
-                            <p>Quadro Rick&Morty</p>
-                            <p>Preço: $39.99</p>
-                        </div>
-                        <div className="produto">
-                            <img src="../src/assets/Quadro-Zelda.png" alt="Decoração 5" />
-                            <p>Quadro Zelda</p>
-                            <p>Preço: $99.99</p>
-                        </div>
-                        <div className="produto">
-                            <img src="../src/assets/Quadros-homer-pac-man.png" alt="Decoração 6" />
-                            <p>Quadros homer e Pac-man</p>
-                            <p>Preço: $154.99</p>
-                        </div>
-                        <div className="produto">
-                            <img src="../src/assets/Quadros-star-wars.png" alt="Decoração 7" />
-                            <p>Quadros star-wars</p>
-                            <p>Preço: $199.99</p>
-                        </div>
-                        </div>
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/produto/listar/")
+      .then(response => {
+        setProdutos(response.data)
+      }).catch(() => {
+        console.log("nao encontrou produto")
+      })
+  }, [])
+
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/api/categoria/listar/`)
+      .then(response => {
+        setCategorias(response.data)
+      }).catch(() => {
+        console.log("nao encontrou categoria")
+      })
+  })
+
+  const categoriaFiltrada = categorias.filter((categoria) => categoria.nome == "Decoração");
+
+  return (
+    <>
+      <Header />
+      <main className="Decoração">
+        {categoriaFiltrada.map((categoria, key) => {
+          const produtosFiltrados = produtos.filter((produto) => produto.categoriaDTO.nome == "Decoração");
+          return (
+            <div className="categoria" key={key} id={`{categoria.nome}`}>
+              <div className="titulo">
+                <h3>{categoria.nome}</h3> <hr />
+              </div>
+
+              <div className="produtos-categoria">
+                {produtosFiltrados.map((produto, key) => {
+                  return (
+                    <div className="produto" key={key}>
+                      <Link to={`item/${produto.id}`}>
+                        <img src={`../src/assets/${produto.descricao}`} alt={`${produto.descricao}`} />
+                      </Link>
+                      <p>{produto.nome}</p>
+                      <p>Preço: R${produto.valorUnit.toFixed(2)}</p>
                     </div>
-                </div>
-            </main>
-            <Footer />
-        </>
-    )
+                  );
+                })}
+              </div>
+
+            </div>
+          );
+        })}
+      </main>
+      <Footer />
+    </>
+  )
 }

@@ -1,39 +1,67 @@
-import React from 'react'
-import HeaderMain from '../../../components/Header'
-import './style.css'
-import Footer from '../../../components/Footer'
+import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
+import Header from '../../../components/Header'
+import 'bootstrap/dist/css/bootstrap.css';
+import Footer from '../../../components/Footer';
+import '../../Produtos/style.css'
+import axios from 'axios';
 
 export default function Acessorios() {
-    return (
-        <>
-            <HeaderMain />
-            <main className="acessorios">
-                <div class="container-categorias">
-                    <div className="categoria">
-                        <div className="titulo">
-                            <h3>Acessórios</h3> <hr />
-                        </div>
-                        <div className="produtos-categoria">
-                        <div class="produto">
-                            <img src="../src/assets/Controle-Dragon-Ball.png" alt="Acessorios 1" />
-                            <p>Controle Dragon Ball</p>
-                            <p>Preço: $129.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Controle-Naruto.png" alt="Acessorios 2" />
-                            <p>Controle Naruto</p>
-                            <p>Preço: $149.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Controle-Naruto2.png" alt="Acessorios 3" />
-                            <p>Controle Naruto</p>
-                            <p>Preço: $99.99</p>
-                        </div>
-                        </div>
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/produto/listar/")
+      .then(response => {
+        setProdutos(response.data)
+      }).catch(() => {
+        console.log("nao encontrou produto")
+      })
+  }, [])
+
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/api/categoria/listar/`)
+      .then(response => {
+        setCategorias(response.data)
+      }).catch(() => {
+        console.log("nao encontrou categoria")
+      })
+  })
+
+  const categoriaFiltrada = categorias.filter((categoria) => categoria.nome == "Acessórios");
+
+  return (
+    <>
+      <Header />
+      <main className="Acessórios">
+        {categoriaFiltrada.map((categoria, key) => {
+          const produtosFiltrados = produtos.filter((produto) => produto.categoriaDTO.nome == "Acessórios");
+          return (
+            <div className="categoria" key={key} id={`{categoria.nome}`}>
+              <div className="titulo">
+                <h3>{categoria.nome}</h3> <hr />
+              </div>
+
+              <div className="produtos-categoria">
+                {produtosFiltrados.map((produto, key) => {
+                  return (
+                    <div className="produto" key={key}>
+                      <Link to={`item/${produto.id}`}>
+                        <img src={`../src/assets/${produto.descricao}`} alt={`${produto.descricao}`} />
+                      </Link>
+                      <p>{produto.nome}</p>
+                      <p>Preço: R${produto.valorUnit.toFixed(2)}</p>
                     </div>
-                </div>
-            </main>
-            <Footer />
-        </>
-    )
+                  );
+                })}
+              </div>
+
+            </div>
+          );
+        })}
+      </main>
+      <Footer />
+    </>
+  )
 }

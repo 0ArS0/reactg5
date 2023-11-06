@@ -1,60 +1,67 @@
-import React from 'react'
-import '/src/pages/Produtos/style.css'
-import HeaderMain from '../../../components/Header'
-import './style.css'
-import Footer from '../../../components/Footer'
+import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
+import Header from '../../../components/Header'
+import 'bootstrap/dist/css/bootstrap.css';
+import Footer from '../../../components/Footer';
+import '../../Produtos/style.css'
+import axios from 'axios';
 
 export default function Camisas() {
-    return (
-        <>
-        <HeaderMain />
-            <main className="camisas">
-                <div class="container-categorias">
-                    <div className="categoria">
-                        <div className="titulo">
-                        <h3>Camisas</h3> <hr />
-                        </div>
-                        <div className="produtos-categoria">
-                        <div class="produto">
-                            <img src="../src/assets/Camisa-Pato.png" alt="Camisa 1" />
-                            <p>Camisa Preta Pato</p>
-                            <p>Preço: $19.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Camisa-Lyza-morticia.png" alt="Camisa 2" />
-                            <p>Camisa Preta Lyza</p>
-                            <p>Preço: $49.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Camisa-LoL.png" alt="Camisa 3" />
-                            <p>Camisa Preta LoL</p>
-                            <p>Preço: $19.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Camisa-minecraft.png" alt="Camisa 4" />
-                            <p>Camisa Preta Minecraft</p>
-                            <p>Preço: $24.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Camisa-pac-man.png" alt="Camisa 5" />
-                            <p>Camisa Preta Pac-man</p>
-                            <p>Preço: $39.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Camisa-playstation.png" alt="Camisa 6" />
-                            <p>Camisa Preta Playstation</p>
-                            <p>Preço: $19.99</p>
-                        </div>
-                        <div class="produto">
-                            <img src="../src/assets/Camisa-xbox.png" alt="Camisa 7" />
-                            <p>Camisa Preta Xbox</p>
-                            <p>Preço: $24.99</p>
-                        </div>
-                        </div>
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/produto/listar/")
+      .then(response => {
+        setProdutos(response.data)
+      }).catch(() => {
+        console.log("nao encontrou produto")
+      })
+  }, [])
+
+  const [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:8080/api/categoria/listar/`)
+      .then(response => {
+        setCategorias(response.data)
+      }).catch(() => {
+        console.log("nao encontrou categoria")
+      })
+  })
+
+  const categoriaFiltrada = categorias.filter((categoria) => categoria.nome == "Camisas");
+
+  return (
+    <>
+      <Header />
+      <main className="camisas">
+        {categoriaFiltrada.map((categoria, key) => {
+          const produtosFiltrados = produtos.filter((produto) => produto.categoriaDTO.nome == "Camisas");
+          return (
+            <div className="categoria" key={key} id={`{categoria.nome}`}>
+              <div className="titulo">
+                <h3>{categoria.nome}</h3> <hr />
+              </div>
+
+              <div className="produtos-categoria">
+                {produtosFiltrados.map((produto, key) => {
+                  return (
+                    <div className="produto" key={key}>
+                      <Link to={`item/${produto.id}`}>
+                        <img src={`../src/assets/${produto.descricao}`} alt={`${produto.descricao}`} />
+                      </Link>
+                      <p>{produto.nome}</p>
+                      <p>Preço: R${produto.valorUnit.toFixed(2)}</p>
                     </div>
-                </div>
-            </main>
-            <Footer />
-        </>
-    )
+                  );
+                })}
+              </div>
+
+            </div>
+          );
+        })}
+      </main>
+      <Footer />
+    </>
+  )
 }

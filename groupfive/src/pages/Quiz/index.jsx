@@ -169,7 +169,7 @@ export default function Quiz() {
             <main className="pagina-quiz">
                 <div className="titulo-quiz">
 
-                <h1>&gt;&gt;BEM VINDO JOVEM PADAWAN&lt;&lt;</h1>
+                    <h1>&gt;&gt;BEM VINDO JOVEM PADAWAN&lt;&lt;</h1>
                 </div>
                 <div className="meio1">
                     <div className="texto1">
@@ -185,10 +185,10 @@ export default function Quiz() {
                 <div className="meio2">
                     <div className="texto2">
                         <p>
-                            Você sabia que desde 2006, o dia 25 de maio é o dia do orgulho geek, também conhecido como dia do orgulho nerd.   
+                            Você sabia que desde 2006, o dia 25 de maio é o dia do orgulho geek, também conhecido como dia do orgulho nerd.
                         </p>
                         <p>
-                        Isso porque, nesse mesmo dia, em 1977, foi lançado nos cinemas o filme
+                            Isso porque, nesse mesmo dia, em 1977, foi lançado nos cinemas o filme
                             “Star Wars – Episódio IV – Uma nova esperança”, um grande símbolo da cultura geek.
                         </p>
 
@@ -202,9 +202,15 @@ export default function Quiz() {
                     </div> */}
                 </div>
                 <div className="quiz">
-                    <h1>Quiz Geek</h1>
-                    <p>O que você curte?
-                        (Selecione até 2 respostas)</p>
+                        <h1>Quiz Geek</h1>
+                    <div className="texto-quiz">
+
+                        <p>O que você curte?
+                        </p>
+                        <p>
+                            (Selecione até 2 respostas)
+                        </p>
+                    </div>
                     <div className="opcoes">
                         {options.map((option) => (
                             <button
@@ -216,16 +222,20 @@ export default function Quiz() {
                             </button>
                         ))}
                     </div>
+                    <div className="opcao-envio">
+                            
 
 
-                    <button onClick={handleQuizSubmit}>Enviar Quiz</button>
-                    {result && (
-                        <div>
-                            <p>Resultado:</p>
-                            <p>{result}</p>
-                            <button onClick={handleRestartQuiz}>Refazer Quiz</button>
-                        </div>
-                    )}
+                        <button onClick={handleQuizSubmit}>Enviar Quiz</button>
+                        {result && (
+                            <div>
+                                <p>Resultado:</p>
+                                <p>{result}</p>
+                                <button onClick={handleRestartQuiz}>Refazer Quiz</button>
+                            </div>
+                        )}
+                        
+                    </div>
                 </div>
 
             </main>

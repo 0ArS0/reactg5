@@ -1,26 +1,68 @@
-.pagina-quiz{
+.pagina-quiz {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+
 }
-.meio1{
+
+.meio1 {
     width: 100%;
     background-color: #242424;
-    margin-top: 5vh;  
+    margin-top: 5vh;
     display: flex;
     justify-content: center;
+
 }
-.texto1{
+
+.texto1 {
     width: 70%;
     text-align: center;
     margin-top: 0.5vh;
     margin-bottom: -1.5vh;
-    
+
 }
-.texto1 p{
+
+.texto1 p {
     font-size: 1.1rem;
 }
-.meio2{
-    
+
+.meio2 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8vh;
+}
+
+.texto2 {
+    text-align: center;
+    width: 90vh;
+    background-color: #121212;
+    padding: 2vh;
+    border: 2px solid #ffb100;
+}
+
+.titulo-quiz {
+    text-align: center;
+    margin-top: 6vh;
+}
+
+.quiz {
+    background-color: #121212;
+    border: 2px solid #ffb100;
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 50vh;
+}
+
+.opcoes button {
+    height: 50px;
+    width: 150px;
 }

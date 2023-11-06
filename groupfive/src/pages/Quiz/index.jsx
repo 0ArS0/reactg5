@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import "./style.css"
+import { Link } from 'react-router-dom'
 
 export default function Quiz() {
     const [selecao, setSelecao] = useState([])
@@ -166,6 +167,10 @@ export default function Quiz() {
         <>
             <Header />
             <main className="pagina-quiz">
+                <div className="titulo-quiz">
+
+                <h1>&gt;&gt;BEM VINDO JOVEM PADAWAN&lt;&lt;</h1>
+                </div>
                 <div className="meio1">
                     <div className="texto1">
 
@@ -180,13 +185,21 @@ export default function Quiz() {
                 <div className="meio2">
                     <div className="texto2">
                         <p>
-                            Você sabia que desde 2006, o dia 25 de maio é o dia do orgulho geek, também conhecido como dia do orgulho nerd?
-                            Isso porque, nesse mesmo dia, em 1977, foi lançado nos cinemas o filme
+                            Você sabia que desde 2006, o dia 25 de maio é o dia do orgulho geek, também conhecido como dia do orgulho nerd.   
+                        </p>
+                        <p>
+                        Isso porque, nesse mesmo dia, em 1977, foi lançado nos cinemas o filme
                             “Star Wars – Episódio IV – Uma nova esperança”, um grande símbolo da cultura geek.
                         </p>
 
+                        <p>
+                            Clique no botão abaixo para utilizar nosso tradutor
+                        </p>
+                        <Link to="/tradutor"><button>Tradutor</button></Link>
                     </div>
-                    <div className="tradutor-api"></div>
+                    {/* <div className="tradutor-api">
+                        <h1>Tradutor Geek</h1>
+                    </div> */}
                 </div>
                 <div className="quiz">
                     <h1>Quiz Geek</h1>

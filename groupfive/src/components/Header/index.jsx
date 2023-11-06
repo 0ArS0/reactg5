@@ -27,6 +27,10 @@ export default function HeaderMain() {
           <Link className="auxItem" to="/produtos/decoracao">Decoração </Link>
           •
           <Link className="auxItem" to="/produtos/acessorios">Acessórios </Link>
+          •
+          <Link className="auxItem" to="/quiz">Geek Quiz </Link>
+          •
+          <Link className="auxItem" to="/tradutor">Tradutor Geek </Link>
         </div>
       </div>
     </header>

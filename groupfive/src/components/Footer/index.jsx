@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="logo">
             <img src={Logo} style={{ width: '18vh', marginTop: '1.5vh' }} />
           </div>
-          <p>Group Five <Link to='/produtosAdmin'>&copy;</Link> - Nenhum todos os direitos reservados.</p>
+          <p>Group Five <Link to='/produtosAdmin'>&copy;</Link> - Nem todos os direitos reservados.</p>
           <div className="footerItems">
             <div className="footerSocial">
               <div className="footerSocialImg">

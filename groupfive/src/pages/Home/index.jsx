@@ -25,52 +25,40 @@ export default function Home() {
                 alt="Image One" />
             </Carousel.Item>
             <Carousel.Item interval={2800}>
-              <Link>
-                <img className='d-block w100'
-                  src="src/assets/Camisa-pac-man.png"
-                  alt="Image Two"
-                />
-              </Link>
+              <img className='d-block w100'
+                src="src/assets/Camisa-pac-man.png"
+                alt="Image Two"
+              />
             </Carousel.Item>
             <Carousel.Item interval={2800}>
-              <Link>
-                <img className='d-block w100'
-                  src="src/assets/Caneca-Vicente-Jóia.png"
-                  alt="Image Three"
-                />
-              </Link>
+              <img className='d-block w100'
+                src="src/assets/Caneca-Vicente-Jóia.png"
+                alt="Image Three"
+              />
             </Carousel.Item>
             <Carousel.Item interval={2800}>
-              <Link>
-                <img className='d-block w100'
-                  src="src/assets/Camisa-Lol.png"
-                  alt="Image Four"
-                />
-              </Link>
+              <img className='d-block w100'
+                src="src/assets/Camisa-Lol.png"
+                alt="Image Four"
+              />
             </Carousel.Item>
             <Carousel.Item interval={2800}>
-              <Link>
-                <img className='d-block w100'
-                  src="src/assets/Camisa-Lyza-morticia.png"
-                  alt="Image Five"
-                />
-              </Link>
+              <img className='d-block w100'
+                src="src/assets/Camisa-Lyza-morticia.png"
+                alt="Image Five"
+              />
             </Carousel.Item>
             <Carousel.Item interval={2800}>
-              <Link>
-                <img className='d-block w100'
-                  src="src/assets/Quadro-Jar-Jar-Binks.png"
-                  alt="Image Six"
-                />
-              </Link>
+              <img className='d-block w100'
+                src="src/assets/Quadro-Jar-Jar-Binks.png"
+                alt="Image Six"
+              />
             </Carousel.Item>
             <Carousel.Item interval={2800}>
-              <Link>
-                <img className='d-block w100'
-                  src="src/assets/Camisa-Pato.png"
-                  alt="Image Seven"
-                />
-              </Link>
+              <img className='d-block w100'
+                src="src/assets/Camisa-Pato.png"
+                alt="Image Seven"
+              />
             </Carousel.Item>
           </Carousel>
         </div>

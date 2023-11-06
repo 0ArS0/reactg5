@@ -40,35 +40,27 @@ export default function Produtos() {
           <div className="Carrousel" style={{ display: "block" }}>
             <Carousel controls={false} indicators={true} indicatorLabels={["btn1", "btn2", "btn3", "btn4"]} className='carrossel'>
               <Carousel.Item interval={3400}>
-                <Link>
-                  <img className='d-block w100'
-                    src="src/assets/Camisa-Lyza-morticia.png"
-                    alt="Image One" />
-                </Link>
+                <img className='d-block w100'
+                  src="src/assets/Camisa-Lyza-morticia.png"
+                  alt="Image One" />
               </Carousel.Item>
               <Carousel.Item interval={2800}>
-                <Link>
-                  <img className='d-block w100'
-                    src="src/assets/Quadro-Jar-Jar-Binks.png"
-                    alt="Image Two"
-                  />
-                </Link>
+                <img className='d-block w100'
+                  src="src/assets/Quadro-Jar-Jar-Binks.png"
+                  alt="Image Two"
+                />
               </Carousel.Item>
               <Carousel.Item interval={2800}>
-                <Link>
-                  <img className='d-block w100'
-                    src="src/assets/Caneca-Vicente-Jóia.png"
-                    alt="Image Three"
-                  />
-                </Link>
+                <img className='d-block w100'
+                  src="src/assets/Caneca-Vicente-Jóia.png"
+                  alt="Image Three"
+                />
               </Carousel.Item>
               <Carousel.Item interval={2800}>
-                <Link>
-                  <img className='d-block w100'
-                    src="src/assets/Camisa-Pato.png"
-                    alt="Image Four"
-                  />
-                </Link>
+                <img className='d-block w100'
+                  src="src/assets/Camisa-Pato.png"
+                  alt="Image Four"
+                />
               </Carousel.Item>
             </Carousel>
           </div>

@@ -45,7 +45,7 @@ export default function Tradutor() {
             <main className="pagina-tradutor">
                 <div className='caixaB'>
                     <div className='titulo-tradutor'>
-                        <h1>Tradutor</h1>
+                        <h1>&gt;&gt;Tradutor Geek&lt;&lt;</h1>
                     </div>
                     <div className="texto-tradutor">
                         <p>Imagina só, você em uma galáxia distante, rodeado de alienígenas e línguas estranhas por todos os lados. Aí entra o Tradutor de Línguas Geeks, a sua chave para se divertir nesse playground intergaláctico!</p>
@@ -70,7 +70,7 @@ export default function Tradutor() {
                                 ))}
                             </div>
                         </div>
-                        <div className="botoes">
+                        <div className="botao-enviar">
                             <button onClick={translateText}>Traduzir</button>
                             {translationResult && (
                                 <div>

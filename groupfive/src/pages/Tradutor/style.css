@@ -3,10 +3,13 @@
     flex-direction: column;
     justify-content: center;   
     align-items: center;
-    
 }
 
 .caixaB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 4vh;
     border: 2px solid #ffb100;
     border-radius: 3vh;
@@ -33,7 +36,6 @@
     text-align: center;
     justify-content: center;
     margin-bottom: 2vh;
-
 }
 
 .caixaA {
@@ -41,22 +43,30 @@
     display: flex;
     justify-content: center;   
 }
-.tradutor .botoes {
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.tradutor .botoes-api {
-    display: flex;
-}
 
 .tradutor button{
     border: 2px solid #ffb100;
-    background-color: #121212;
+    border-radius: 15px;
     padding: 1vh;
-    color: #fff;
+    color: #01142e;
     margin: 2vh;
+    transition: ease-in-out .5s;
+}
+
+.tradutor button:hover {
+    transition: ease-in-out .5s;
+    color: #fff;
+    background-color: #323232;
+}
+
+.tradutor .botao-enviar button{
+    height: 50px;
+    width: 150px;
+}
+
+.tradutor .botoes-api button{
+    height: 50px;
+    width: 150px;
 }
 
 .tradutor button:active{

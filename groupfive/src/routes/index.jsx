@@ -12,11 +12,14 @@ import Acessorios from '../pages/Produtos/acessorios';
 import Item from '../pages/Item';
 import Quiz from '../pages/Quiz';
 import Tradutor from '../pages/Tradutor';
+import Contador from '../components/Contador';
+import Contato from '../pages/Contato';
 
 export default function AppRouter() {
   return (
     <Routes>
         <Route path='/' element={<Home />} ></Route>
+        <Route path='/contador' element={<Contador />} ></Route>
         <Route path='/produtos' element={<Produtos />} ></Route>
         <Route path='/produtos/camisas' element={<Camisas />} ></Route>
         <Route path='/produtos/decoracao' element={<Decoracao />} ></Route>
@@ -27,6 +30,7 @@ export default function AppRouter() {
         <Route path='/posts' element={<Posts/>}></Route>
         <Route path='/quiz' element={<Quiz />} ></Route>
         <Route path='/tradutor' element={<Tradutor />} ></Route>
+        <Route path='/contato' element={<Contato />} ></Route>
         <Route path='*' element={<Erro />} ></Route>
     </Routes>
   )

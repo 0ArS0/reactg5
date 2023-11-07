@@ -7,7 +7,6 @@
 }
 
 .caixaB {
-    width: 130vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +26,6 @@
 }
 
 .texto-tradutor {
-    width: 120vh;
     text-align: center;
     margin-bottom: 5vh;
 }

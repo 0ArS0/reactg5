@@ -34,7 +34,7 @@ export default function Acessorios() {
   return (
     <>
       <Header />
-      <main className="Acessórios">
+      <main className="acessórios">
         {categoriaFiltrada.map((categoria, key) => {
           const produtosFiltrados = produtos.filter((produto) => produto.categoriaDTO.nome == "Acessórios");
           return (

@@ -6,6 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../../components/Footer';
 import '../Produtos/style.css'
 import axios from 'axios';
+import Contador from '../../components/Contador';
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
@@ -34,6 +35,7 @@ export default function Produtos() {
     <div>
       <Header />
       <main className="produtos">
+        <Contador/>
         <div className="hotProds">
           <h1>Produtos Populares</h1>
           <p>Abaixo são os produtos mais comprados</p>

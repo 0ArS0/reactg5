@@ -1,0 +1,14 @@
+.atrasContador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #920505d2;
+    width: 100%;
+}
+
+.contador p{
+    color: white;
+    font-size: 18px;
+    margin-bottom: -0.05vh;
+}

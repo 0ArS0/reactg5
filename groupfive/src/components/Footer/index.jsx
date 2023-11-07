@@ -14,7 +14,7 @@ export default function Footer() {
           <img src={Logo} style={{ width: '18vh', marginTop: '1.5vh' }} />
         </div>
         <div className="texto-footer">
-          <p>Group Five <Link to='/produtosAdmin'>&copy;</Link> - Nem todos os direitos reservados.</p>
+          <p>Group Five <Link to='/produtosAdmin'>&#x00AE;&#xFE0F;</Link> - Nem todos os direitos reservados.</p>
         </div>
         <div className="footerSocialImg">
           <a href="mailto:groups2five@gmail.com? subject=teste" target="blank"><img src={Email} /></a>

@@ -1,38 +1,62 @@
-import React, { useState } from 'react'
+import React from 'react';
 import HeaderMain from '../../components/Header'
-import Footer from '../../components/Footer'
-import './style.css'
+import Footer from '../../components/Footer';
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import "./style.css";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
+const validationPost = yup.object().shape({
+  nome: yup
+    .string()
+    .required("Preencha o nome do produto")
+    .max(40, "Até 40 caracteres"),
+  telefone: yup
+    .string()
+    .required("Preencha o telefone")
+    .max(40, "Até 40 caracteres"),
+  email: yup
+    .string()
+    .required("Obrigatório preencher o email")
+    .max(50, "Até 50 caracteres"),
+  assunto: yup
+    .string()
+    .required("Insira o assunto da sua mensagem")
+    .max(40, "Até 40 caracteres"),
+  mensagem: yup
+    .string()
+    .required("Insira a mensagem")
+    .max(400, "Até 400 caracteres")
+})
 
 export default function Contato() {
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [assunto, setAssunto] = useState('');
-    const [mensagem, setMensagem] = useState('');
-    const [mensagemNotificacao, setMensagemNotificacao] = useState('');
 
+  let navigate = useNavigate();
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors} } = useForm({resolver:yupResolver(validationPost)})
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const addPost = (data) => axios.post("http://localhost:8080/api/email/enviar/", data)
+    .then(() => {
+      console.log("Email enviado")
+      alert("Mensagem enviada com sucesso!")
+      navigate("/")
 
-        if (nome && email && telefone && assunto && mensagem) {
-            setMensagemNotificacao('Mensagem enviada com sucesso!');
-            setNome('');
-            setEmail('');
-            setTelefone('');
-            setAssunto('');
-            setMensagem('');
-        } else {
-            setMensagemNotificacao('Por favor, preencha todos os campos.');
-        }
-    };
+    }).catch(() => {
+      console.log("Email não enviado")
+    })
+
     return (
         <>
             <HeaderMain />
             <main className="contato">
                 <h2>CONTATO</h2>
                 <div className="card-body-post">
-                    <form onSubmit={handleSubmit}>
+                    <form action="#" onSubmit={handleSubmit(addPost)}>
                         <div className="fields">
                             <label htmlFor="nome">Nome: </label>
                             <input
@@ -40,8 +64,7 @@ export default function Contato() {
                                 type="text"
                                 id="nome"
                                 name="nome"
-                                value={nome}
-                                onChange={(e) => setNome(e.target.value)}
+                                {...register("nome")}
                             />
                         </div>
                         <div className="fields">
@@ -51,9 +74,9 @@ export default function Contato() {
                                 type="email"
                                 id="email"
                                 name="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                {...register("email")}
                             />
+                            <p className="error-message">{errors.titulo?.message}</p>
                         </div>
                         <div className="fields">
                             <label htmlFor="telefone">Telefone: </label>
@@ -62,8 +85,7 @@ export default function Contato() {
                                 type="text"
                                 id="telefone"
                                 name="telefone"
-                                value={telefone}
-                                onChange={(e) => setTelefone(e.target.value)}
+                                {...register("telefone")}
                             />
                         </div>
                         <div className="fields">
@@ -73,8 +95,7 @@ export default function Contato() {
                                 type="text"
                                 id="assunto"
                                 name="assunto"
-                                value={assunto}
-                                onChange={(e) => setAssunto(e.target.value)}
+                                {...register("assunto")}
                             />
                         </div>
                         <div className="fields">
@@ -85,8 +106,7 @@ export default function Contato() {
                                 cols="30"
                                 rows="10"
                                 placeholder="Mensagem"
-                                value={mensagem}
-                                onChange={(e) => setMensagem(e.target.value)}
+                                {...register("mensagem")}
                             ></textarea>
                         </div>
                         <div className='botaoEnviar'>
@@ -95,7 +115,7 @@ export default function Contato() {
                             </button>
                         </div>
                         <div className='notificacao'>
-                            {mensagemNotificacao}
+                            {/* {mensagemNotificacao} */}
                         </div>
                     </form>
                 </div>

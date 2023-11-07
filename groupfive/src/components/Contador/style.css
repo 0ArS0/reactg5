@@ -3,12 +3,17 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #920505d2;
+    /* background-color: #920505d2; */
+    background-color: #01142e;
     width: 100%;
 }
 
 .contador p{
-    color: white;
+    color: #fff;
     font-size: 18px;
     margin-bottom: -0.05vh;
+}
+
+.contador span {
+    color: #ffb100;
 }

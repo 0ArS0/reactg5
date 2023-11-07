@@ -71,3 +71,50 @@ header a+a {
 .auxMenu{
     color: #fff;
 }
+/* 
+.menu-mobile {
+
+} */
+
+.mobile-menu img{
+    width: 7vh;
+}
+
+.mobile-menu-items {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30vh;
+    background-color: #121212;
+    font-size: 1.7rem;
+}
+
+.mobile-menu-items img {
+    margin-top: 5vh;
+}
+
+.seila {
+    margin-top: 5vh;
+    width: 23vh;
+    margin-left: -4vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seila .menuItem1 {
+   margin-left: 4vh;
+}   
+
+@media (max-width: 860px) {
+    .mheader {
+        height: 20vh;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}

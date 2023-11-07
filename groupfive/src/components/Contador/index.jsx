@@ -30,13 +30,14 @@ export default class Contador extends Component {
         const segundos = Math.floor((diferenca % (1000 * 60) / 1000));
         this.setState({ dias, horas, minutos, segundos })
     }
+
     render() {
         const { dias, horas, minutos, segundos } = this.state
         return (
             <div className="atrasContador">
                 <div className="contador">
                     <p>
-                        Contagem regressiva para a Black Friday: {dias} dias, {horas} horas, {minutos} minutos, {segundos} segundos.
+                        Contagem regressiva para a Black Friday: <span>{dias}</span> dias, <span>{horas}</span> horas, <span>{minutos} </span> minutos, <span>{segundos}</span> segundos.
                     </p>
                 </div>
             </div>

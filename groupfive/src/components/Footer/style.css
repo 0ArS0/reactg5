@@ -4,23 +4,35 @@ footer {
     color: #fff;
 }
 
-a {
+.footerItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footerItems a {
     color: #fff;
     text-decoration: none;
 }
 
-.footerItems img {
-    width: 2rem;
-    height: 2rem;
+.footerItems p {
+    margin-top: 3vh;
+    text-align: center;
 }
 
-.footerSocial {
-    margin-top: 1.5vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.texto-footer {
+    width: 100vh;
 }
 
 .footerSocialImg img{
+    margin-top: 1vh;
     margin-left: 30px;
+    width: 2rem;
+    height: 2rem;
 }   
+
+@media (max-width: 650px) {
+    .texto-footer {
+        width: 35vh;
+    }
+}

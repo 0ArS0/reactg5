@@ -168,48 +168,26 @@ export default function Quiz() {
             <Header />
             <main className="pagina-quiz">
                 <div className="titulo-quiz">
-
-                    <h1>&gt;&gt;BEM VINDO JOVEM PADAWAN&lt;&lt;</h1>
+                    <h1>&gt;&gt; OLÁ JOVEM PADAWAN &lt;&lt;</h1>
                 </div>
                 <div className="meio1">
                     <div className="texto1">
-
-                        <p>
-                            Às vezes a gente fica falando de “geek” como se fosse algo super genérico,
-                            como uma coisa só. Mas nada a ver, né?
-                            Existem vários tipos de geek, cada um com sua peculiaridade e seu jeitinho.
-                            Que tal você descobrir qual seu subtipo?
-                        </p>
+                        <p>Às vezes a gente fica falando de “geek” como se fosse algo super genérico, como uma coisa só. Mas nada a ver, né? Existem vários tipos de geek, cada um com sua peculiaridade e seu jeitinho. Que tal você descobrir qual seu subtipo?</p>
                     </div>
                 </div>
                 <div className="meio2">
                     <div className="texto2">
-                        <p>
-                            Você sabia que desde 2006, o dia 25 de maio é o dia do orgulho geek, também conhecido como dia do orgulho nerd.
-                        </p>
-                        <p>
-                            Isso porque, nesse mesmo dia, em 1977, foi lançado nos cinemas o filme
-                            “Star Wars – Episódio IV – Uma nova esperança”, um grande símbolo da cultura geek.
-                        </p>
-
-                        <p>
-                            Clique no botão abaixo para utilizar nosso tradutor
-                        </p>
+                        <p>Você sabia que desde 2006, o dia 25 de maio é o dia do orgulho geek, também conhecido como dia do orgulho nerd.</p>
+                        <p>Isso porque, nesse mesmo dia, em 1977, foi lançado nos cinemas o filme “Star Wars - Episódio IV - Uma nova esperança”, um grande símbolo da cultura geek.</p>
+                        <p>Clique no botão abaixo para utilizar nosso tradutor</p>
                         <Link to="/tradutor"><button>Tradutor</button></Link>
                     </div>
-                    {/* <div className="tradutor-api">
-                        <h1>Tradutor Geek</h1>
-                    </div> */}
                 </div>
                 <div className="quiz">
-                        <h1>Quiz Geek</h1>
+                    <h1>Quiz Geek</h1>
                     <div className="texto-quiz">
-
-                        <p>O que você curte?
-                        </p>
-                        <p>
-                            (Selecione até 2 respostas)
-                        </p>
+                        <p>O que você curte? </p>
+                        <p>(Selecione até 2 respostas)</p>
                     </div>
                     <div className="opcoes">
                         {options.map((option) => (
@@ -217,15 +195,10 @@ export default function Quiz() {
                                 key={option}
                                 onClick={() => handleOptionSelect(option)}
                                 disabled={selecao.length === 2 || (selecao.length === 1 && selecao[0] === "Todos")}
-                            >
-                                {option}
-                            </button>
+                            >{option}</button>
                         ))}
                     </div>
                     <div className="opcao-envio">
-                            
-
-
                         <button onClick={handleQuizSubmit}>Enviar Quiz</button>
                         {result && (
                             <div>
@@ -234,10 +207,8 @@ export default function Quiz() {
                                 <button onClick={handleRestartQuiz}>Refazer Quiz</button>
                             </div>
                         )}
-                        
                     </div>
                 </div>
-
             </main>
             <Footer />
         </>
